@@ -8,12 +8,20 @@
 
   var hdr  = $('#hdr');
   var dock = $('#dock');
+  var bar  = $('#hdrProgress');
 
   // шапка плотнеет при скролле, нижняя панель выезжает после первого экрана
   function onScroll() {
-    var y = window.pageYOffset || document.documentElement.scrollTop;
+    var doc = document.documentElement;
+    var y = window.pageYOffset || doc.scrollTop;
+
     if (hdr)  hdr.classList.toggle('is-stuck', y > 24);
     if (dock) dock.classList.toggle('is-on', y > window.innerHeight * 0.6);
+
+    if (bar) {
+      var max = doc.scrollHeight - window.innerHeight;
+      bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(y / max, 1) : 0) + ')';
+    }
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
