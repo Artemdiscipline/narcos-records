@@ -321,9 +321,10 @@ h3{ font-size:19px; font-weight:700 }
 }
 .hdr.is-stuck .hdr-progress{ opacity:.9 }
 
-.brand{ display:flex; align-items:center; gap:12px; margin-right:auto }
-.brand-mark{ display:block; width:32px; height:32px; flex:none; opacity:.92; transition:opacity .3s ease }
-.brand-mark img{ width:100%; height:100% }
+.brand{ display:flex; align-items:center; gap:14px; margin-right:auto }
+/* эмблема широкая (263×136), поэтому задаём ширину, а высоту считает браузер */
+.brand-mark{ display:block; width:50px; flex:none; opacity:.9; transition:opacity .3s ease }
+.brand-mark img{ width:100%; height:auto }
 .brand:hover .brand-mark{ opacity:1 }
 
 .nav{ display:none; gap:30px }
@@ -822,6 +823,7 @@ h3{ font-size:19px; font-weight:700 }
 
 .ftr{ position:relative; background:var(--ink); padding-top:72px }
 .ftr-grid{ display:grid; gap:44px; padding-bottom:60px }
+.ftr-mark{ width:132px; height:auto; margin-bottom:26px; opacity:.85 }
 .ftr-brand .slogan{
   margin:22px 0 14px;
   font-family:var(--f-head); font-weight:700;
