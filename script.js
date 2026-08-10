@@ -1,10 +1,4 @@
-/* ============================================================
-   NARCOS RECORDS — script.js
-   Без зависимостей. Всё опционально и деградирует безопасно.
-   Разделы: 1) reduced-motion  2) шапка  3) бургер  4) активный пункт
-            5) появление при скролле  6) счётчики  7) битые картинки
-            8) мобильная панель  9) бегущая строка
-   ============================================================ */
+/* Narcos Records — скрипты страницы. Без библиотек. */
 (function () {
   'use strict';
 
@@ -12,24 +6,20 @@
   var $  = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
 
-  /* ==========================================================
-     1. ШАПКА: фон и LED-линия при скролле
-     ========================================================== */
-  var hdr = $('#hdr');
+  var hdr  = $('#hdr');
   var dock = $('#dock');
 
+  // шапка плотнеет при скролле, нижняя панель выезжает после первого экрана
   function onScroll() {
     var y = window.pageYOffset || document.documentElement.scrollTop;
-    if (hdr) hdr.classList.toggle('is-stuck', y > 24);
-    // Мобильная панель показывается после первого экрана
+    if (hdr)  hdr.classList.toggle('is-stuck', y > 24);
     if (dock) dock.classList.toggle('is-on', y > window.innerHeight * 0.6);
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ==========================================================
-     2. БУРГЕР И МОБИЛЬНОЕ МЕНЮ
-     ========================================================== */
+
+  // бургер
   var burger = $('#burger');
   var mnav = $('#mnav');
 
@@ -45,23 +35,20 @@
     burger.addEventListener('click', function () {
       setMenu(burger.getAttribute('aria-expanded') !== 'true');
     });
-    // Закрываем по клику на пункт
     $$('a', mnav).forEach(function (a) {
       a.addEventListener('click', function () { setMenu(false); });
     });
-    // Закрываем по Esc
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') setMenu(false);
     });
-    // Закрываем при переходе на десктоп
+    // на десктопе меню прячется через CSS, но состояние надо сбросить
     window.addEventListener('resize', function () {
       if (window.innerWidth >= 900) setMenu(false);
     });
   }
 
-  /* ==========================================================
-     3. АКТИВНЫЙ ПУНКТ НАВИГАЦИИ
-     ========================================================== */
+
+  // подсветка текущего пункта в навигации
   var navLinks = $$('.nav a');
   var sections = navLinks
     .map(function (a) { return $(a.getAttribute('href')); })
@@ -79,9 +66,8 @@
     sections.forEach(function (s) { navObs.observe(s); });
   }
 
-  /* ==========================================================
-     4. ПОЯВЛЕНИЕ ЭЛЕМЕНТОВ ПРИ СКРОЛЛЕ
-     ========================================================== */
+
+  // появление блоков при скролле
   var animated = $$('.js-fade, .js-card, .js-head');
 
   if (reduce || !('IntersectionObserver' in window)) {
@@ -91,12 +77,14 @@
       entries.forEach(function (en) {
         if (!en.isIntersecting) return;
         var el = en.target;
-        // Карточки внутри одной сетки появляются каскадом
+
+        // карточки внутри одной сетки выходят каскадом, но не бесконечно
         var delay = 0;
         if (el.classList.contains('js-card') && el.parentElement) {
           var sibs = $$('.js-card', el.parentElement);
           delay = Math.min(sibs.indexOf(el), 5) * 70;
         }
+
         setTimeout(function () { el.classList.add('is-in'); }, delay);
         self.unobserve(el);
       });
@@ -104,35 +92,33 @@
 
     animated.forEach(function (el) { obs.observe(el); });
 
-    // Первый экран показываем сразу, не дожидаясь скролла
+    // первый экран показываем сразу, ждать скролла тут нечего
     $$('.hero .js-fade, .hero .js-head').forEach(function (el) {
       el.classList.add('is-in');
       obs.unobserve(el);
     });
   }
 
-  /* ==========================================================
-     5. СЧЁТЧИКИ В БЛОКЕ МЕТРИК
-     ========================================================== */
-  var counters = $$('.js-count');
 
+  // цифры в блоке метрик
   function runCount(el) {
     var to = parseFloat(el.getAttribute('data-to'));
-    var dec = parseInt(el.getAttribute('data-dec') || '0', 10);
     if (isNaN(to)) return;
-    var dur = 1100, t0 = null;
+    var dec = parseInt(el.getAttribute('data-dec') || '0', 10);
+    var dur = 1100;
+    var t0 = null;
 
     function step(ts) {
       if (t0 === null) t0 = ts;
       var p = Math.min((ts - t0) / dur, 1);
       var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = (to * eased).toFixed(dec).replace('.', dec ? '.' : '');
+      el.textContent = (to * eased).toFixed(dec);
       if (p < 1) requestAnimationFrame(step);
-      else el.textContent = to.toFixed(dec);
     }
     requestAnimationFrame(step);
   }
 
+  var counters = $$('.js-count');
   if (!reduce && 'IntersectionObserver' in window && counters.length) {
     var cObs = new IntersectionObserver(function (entries, self) {
       entries.forEach(function (en) {
@@ -144,50 +130,48 @@
     counters.forEach(function (el) { cObs.observe(el); });
   }
 
-  /* ==========================================================
-     6. НЕЗАГРУЖЕННЫЕ КАРТИНКИ → остаётся аккуратный плейсхолдер
-        (пока в assets/ нет реальных фото)
-     ========================================================== */
+
+  // фото ещё не залиты — прячем битую картинку, под ней остаётся заглушка
   $$('.ph img').forEach(function (img) {
     function markEmpty() {
       var box = img.closest('.ph');
       if (box) box.classList.add('is-empty');
     }
     img.addEventListener('error', markEmpty);
-    // Картинка уже успела упасть до навешивания обработчика
     if (img.complete && img.naturalWidth === 0) markEmpty();
   });
 
-  /* ==========================================================
-     7. БЕГУЩАЯ СТРОКА: скорость под ширину контента,
-        чтобы на любом экране лента шла ровно
-     ========================================================== */
-  var track = $('.marquee-track');
-  if (track && !reduce) {
+
+  // Скорость бегущей строки считаем по ширине содержимого, иначе на широком
+  // экране она еле ползёт. Ждём шрифты: до их загрузки ширина другая.
+  function tuneMarquee() {
+    var track = $('.marquee-track');
+    if (!track || reduce) return;
     var first = track.firstElementChild;
-    if (first) {
-      var w = first.getBoundingClientRect().width;
-      var speed = 70; // px в секунду
-      track.style.animationDuration = Math.max(20, Math.round(w / speed)) + 's';
-    }
+    if (!first) return;
+    var w = first.getBoundingClientRect().width;
+    track.style.animationDuration = Math.max(20, Math.round(w / 70)) + 's';
   }
 
-  /* ==========================================================
-     8. ПЛАВНЫЙ СКРОЛЛ ПО ЯКОРЯМ
-        (запасной вариант для браузеров без scroll-behavior)
-     ========================================================== */
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(tuneMarquee);
+  } else {
+    window.addEventListener('load', tuneMarquee);
+  }
+
+
+  // запасной плавный скролл для браузеров без scroll-behavior
   if (!('scrollBehavior' in document.documentElement.style) && !reduce) {
     $$('a[href^="#"]').forEach(function (a) {
       a.addEventListener('click', function (e) {
         var id = a.getAttribute('href');
-        if (id === '#' || id.length < 2) return;
+        if (id.length < 2) return;
         var target = $(id);
         if (!target) return;
         e.preventDefault();
-        var top = target.getBoundingClientRect().top + window.pageYOffset -
-                  (parseInt(getComputedStyle(document.documentElement)
-                    .getPropertyValue('--hdr'), 10) || 64) - 12;
-        window.scrollTo(0, top);
+        var offset = parseInt(getComputedStyle(document.documentElement)
+          .getPropertyValue('--hdr'), 10) || 64;
+        window.scrollTo(0, target.getBoundingClientRect().top + window.pageYOffset - offset - 12);
       });
     });
   }

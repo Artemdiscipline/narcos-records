@@ -1,60 +1,46 @@
-/* ============================================================
-   NARCOS RECORDS — styles.css
-   Тёмный неон-хром. Mobile-first.
-   Порядок: токены → база → утилиты → компоненты → секции → адаптив
-   ============================================================ */
+/* Narcos Records — стили. Порядок: токены, база, компоненты, секции, адаптив. */
 
-/* ============================================================
-   1. ТОКЕНЫ ДИЗАЙН-СИСТЕМЫ
-   ============================================================ */
 :root{
-  /* Фоны */
-  --ink:        #08080A;   /* почти чёрный — основной фон */
-  --ink-2:      #0E0F14;   /* графит — чередующиеся секции */
-  --ink-3:      #14161D;   /* поверхность карточек */
+  /* фоны */
+  --ink:        #08080A;
+  --ink-2:      #0E0F14;
+  --ink-3:      #14161D;
 
-  /* Неон */
+  /* неон */
   --blue:       #1E5BFF;
   --blue-2:     #2E7BFF;
   --violet:     #7B2FFF;
   --violet-2:   #B14BFF;
   --neon: linear-gradient(120deg, var(--blue) 0%, var(--blue-2) 35%, var(--violet) 72%, var(--violet-2) 100%);
 
-  /* Хром / серебро */
+  /* хром */
   --chrome-1:   #C8D2DE;
   --chrome-2:   #8E98A6;
   --chrome: linear-gradient(135deg,#FFFFFF 0%,#C8D2DE 30%,#71798A 52%,#EDF1F6 74%,#9AA4B2 100%);
 
-  /* Текст */
+  /* текст. fg-dim держим не темнее — иначе мелочь не читается на графите */
   --fg:         #F5F7FA;
   --fg-mid:     #8A93A3;
-  --fg-dim:     #5C6472;
+  --fg-dim:     #7A8494;
 
-  /* Линии и стекло */
   --line:       rgba(200,210,222,.12);
   --line-soft:  rgba(200,210,222,.07);
   --glass:      rgba(20,22,29,.62);
 
-  /* Свечение */
   --glow-blue:   0 0 24px rgba(30,91,255,.45);
   --glow-violet: 0 0 28px rgba(123,47,255,.40);
 
-  /* Метрика */
   --hdr: 64px;
   --pad: 20px;
   --maxw: 1240px;
-  --r: 16px;      /* радиус карточек */
+  --r: 16px;
   --r-sm: 10px;
 
-  /* Шрифты */
   --f-head: "Unbounded", "Manrope", system-ui, sans-serif;
   --f-body: "Manrope", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
 }
 
-/* ============================================================
-   2. БАЗА
-   ============================================================ */
 *,*::before,*::after{ box-sizing:border-box }
 
 html{
@@ -70,14 +56,13 @@ body{
   font-family:var(--f-body);
   font-size:16px;
   line-height:1.65;
-  font-weight:400;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
 }
 body.is-locked{ overflow:hidden }
 
-/* Зерно поверх всего фона */
+/* зерно поверх фона */
 body::after{
   content:"";
   position:fixed; inset:0;
@@ -89,7 +74,6 @@ body::after{
 
 img,svg,iframe{ display:block; max-width:100% }
 img{ height:auto }
-
 a{ color:inherit; text-decoration:none }
 p{ margin:0 0 16px }
 h1,h2,h3,h4{ margin:0; font-family:var(--f-head); font-weight:700; line-height:1.04; letter-spacing:-.02em }
@@ -97,16 +81,15 @@ ul{ margin:0; padding:0; list-style:none }
 
 ::selection{ background:rgba(123,47,255,.45); color:#fff }
 
-/* Фокус-стили — видимые и контрастные */
 :focus-visible{
   outline:2px solid var(--blue-2);
   outline-offset:3px;
   border-radius:4px;
 }
 
-/* ============================================================
-   3. УТИЛИТЫ
-   ============================================================ */
+
+/* --- утилиты --- */
+
 .wrap{
   width:100%;
   max-width:var(--maxw);
@@ -114,7 +97,6 @@ ul{ margin:0; padding:0; list-style:none }
   padding-inline:var(--pad);
 }
 
-/* Хромированный текст */
 .chrome{
   background:var(--chrome);
   -webkit-background-clip:text;
@@ -123,7 +105,7 @@ ul{ margin:0; padding:0; list-style:none }
   -webkit-text-fill-color:transparent;
 }
 
-/* Светящаяся LED-линия — разделитель секций */
+/* светящаяся полоска на стыке секций */
 .led{
   position:absolute; top:0; left:0; right:0;
   height:1px;
@@ -136,7 +118,7 @@ ul{ margin:0; padding:0; list-style:none }
   box-shadow:0 0 14px rgba(90,70,255,.5);
 }
 
-/* Плейсхолдер изображения: пока файла нет — видно аккуратный блок */
+/* Заглушка под фото. Пока файла нет, скрипт вешает .is-empty и остаётся фон. */
 .ph{
   display:block;
   position:relative;
@@ -158,7 +140,6 @@ ul{ margin:0; padding:0; list-style:none }
   pointer-events:none;
 }
 .ph img{ position:relative; z-index:1; width:100%; height:100%; object-fit:cover }
-/* Если файла нет — script.js прячет битую картинку, остаётся фон */
 .ph.is-empty img{ display:none }
 
 .ph-4x3{ aspect-ratio:4/3 }
@@ -167,18 +148,16 @@ ul{ margin:0; padding:0; list-style:none }
 .ph-hero{ aspect-ratio:auto; height:100%; border:0; border-radius:0 }
 .ph-hero::after{ font-size:clamp(28px,10vw,90px); color:rgba(200,210,222,.045) }
 
-/* ============================================================
-   4. КОМПОНЕНТЫ
-   ============================================================ */
 
-/* ---- Кнопки ---- */
+/* --- кнопки --- */
+
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
   min-height:46px;
   padding:12px 22px;
   border-radius:999px;
   font-family:var(--f-body);
-  font-size:14px; font-weight:700; letter-spacing:.01em;
+  font-size:14px; font-weight:700;
   white-space:nowrap;
   border:1px solid transparent;
   transition:transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease, color .25s ease;
@@ -203,7 +182,9 @@ ul{ margin:0; padding:0; list-style:none }
   box-shadow:var(--glow-blue);
 }
 
-/* ---- Вордмарк ---- */
+
+/* --- вордмарк --- */
+
 .brand-word{
   font-family:var(--f-head);
   font-weight:900;
@@ -227,7 +208,9 @@ ul{ margin:0; padding:0; list-style:none }
 .brand-word.big{ font-size:30px; letter-spacing:.04em }
 .brand-word.big i{ font-size:11px }
 
-/* ---- Надзаголовок секции ---- */
+
+/* --- заголовки --- */
+
 .eyebrow{
   font-family:var(--mono);
   font-size:11px;
@@ -237,10 +220,12 @@ ul{ margin:0; padding:0; list-style:none }
   margin:0 0 22px;
 }
 
-/* ---- Заголовки секций ---- */
 h1{ font-size:clamp(38px,10.5vw,104px); font-weight:900; letter-spacing:-.035em }
 h2{ font-size:clamp(30px,7vw,64px); font-weight:900; letter-spacing:-.03em }
 h3{ font-size:19px; font-weight:700 }
+.hero h1, .sec h2{ text-transform:uppercase }
+
+/* строка заголовка + внутренний span — так работает выезд снизу */
 .ln{ display:block; overflow:hidden }
 .ln > span{ display:block }
 
@@ -261,7 +246,6 @@ h3{ font-size:19px; font-weight:700 }
   background:linear-gradient(90deg, rgba(123,47,255,.5), transparent);
 }
 
-/* ---- Список с неоновым маркером ---- */
 .ring-list{ margin-top:26px; display:grid; gap:12px }
 .ring-list li{
   position:relative;
@@ -277,18 +261,9 @@ h3{ font-size:19px; font-weight:700 }
   box-shadow:var(--glow-blue);
 }
 
-/* ---- Стеклянная карточка (база) ---- */
-.card{
-  background:var(--glass);
-  border:1px solid var(--line);
-  border-radius:var(--r);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-}
 
-/* ============================================================
-   5. ШАПКА И НАВИГАЦИЯ
-   ============================================================ */
+/* --- шапка --- */
+
 .hdr{
   position:fixed; inset:0 0 auto;
   z-index:60;
@@ -302,6 +277,16 @@ h3{ font-size:19px; font-weight:700 }
   background:rgba(8,8,10,.88);
   box-shadow:0 8px 30px rgba(0,0,0,.55);
 }
+
+/* без размытия полупрозрачная шапка съедает контраст — заливаем плотнее */
+@supports not ((backdrop-filter: blur(4px)) or (-webkit-backdrop-filter: blur(4px))){
+  .hdr{ background:rgba(8,8,10,.94) }
+  .mnav{ background:#08080A }
+  .marquee{ background:rgba(8,8,10,.92) }
+  .dock{ background:rgba(8,8,10,.96) }
+  .badge, .svc, .member, .rev, .yamap-badge{ background:var(--ink-3) }
+}
+
 .hdr .wrap{
   height:100%;
   display:flex; align-items:center; gap:18px;
@@ -341,7 +326,6 @@ h3{ font-size:19px; font-weight:700 }
 .hdr-tel:hover{ color:var(--fg) }
 .hdr-act .btn{ min-height:40px; padding:10px 20px }
 
-/* Бургер */
 .burger{
   display:grid; place-content:center; gap:5px;
   width:44px; height:44px; flex:none;
@@ -357,7 +341,6 @@ h3{ font-size:19px; font-weight:700 }
 .burger[aria-expanded="true"] span:nth-child(2){ opacity:0 }
 .burger[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg) }
 
-/* Мобильное меню */
 .mnav{
   position:fixed; inset:var(--hdr) 0 0;
   z-index:55;
@@ -380,11 +363,12 @@ h3{ font-size:19px; font-weight:700 }
 .mnav nav a:hover{ color:var(--violet-2) }
 .mnav-foot{ display:grid; gap:10px; margin-top:34px }
 
-/* ============================================================
-   6. HERO
-   ============================================================ */
+
+/* --- hero --- */
+
 .hero{
   position:relative;
+  min-height:100vh;      /* запасной вариант для старых Safari */
   min-height:100svh;
   display:flex; align-items:flex-end;
   padding-top:var(--hdr);
@@ -414,7 +398,6 @@ h3{ font-size:19px; font-weight:700 }
 
 .hero-inner{ width:100%; padding-bottom:96px }
 
-/* Плашка рейтинга */
 .badge{
   display:inline-flex; align-items:center; gap:9px;
   padding:8px 16px 8px 12px;
@@ -434,7 +417,7 @@ h3{ font-size:19px; font-weight:700 }
   text-shadow:0 0 10px rgba(255,206,74,.55);
 }
 
-.hero h1{ margin:0 0 22px; text-transform:uppercase }
+.hero h1{ margin:0 0 22px }
 .hero-sub{
   max-width:52ch;
   color:var(--fg-mid);
@@ -461,7 +444,7 @@ h3{ font-size:19px; font-weight:700 }
   50%{ transform:scale(1.7); opacity:.35 }
 }
 
-/* ---- Бегущая строка ---- */
+/* Бегущая строка. Внутри две одинаковых копии, сдвиг на -50% и есть цикл. */
 .marquee{
   position:absolute; left:0; right:0; bottom:0;
   z-index:2;
@@ -484,7 +467,6 @@ h3{ font-size:19px; font-weight:700 }
   font-family:var(--f-head); font-weight:500;
   font-size:12px; letter-spacing:.16em; text-transform:uppercase;
   color:var(--chrome-1);
-  padding-right:0;
   white-space:nowrap;
 }
 .marquee-track em{
@@ -497,11 +479,12 @@ h3{ font-size:19px; font-weight:700 }
 @keyframes marquee{ to{ transform:translateX(-50%) } }
 .marquee:hover .marquee-track{ animation-play-state:paused }
 
-/* ============================================================
-   7. ОБЩИЙ КАРКАС СЕКЦИЙ
-   ============================================================ */
+
+/* --- каркас секций --- */
+
 .sec{ position:relative; overflow:hidden }
-.sec-inner{ padding-block:72px }
+.sec-inner{ padding-block:72px; position:relative; z-index:1 }
+
 .about{ background:var(--ink) }
 .services{ background:var(--ink-2) }
 .works{ background:var(--ink) }
@@ -509,7 +492,6 @@ h3{ font-size:19px; font-weight:700 }
 .reviews{ background:var(--ink) }
 .contacts{ background:var(--ink-2) }
 
-/* Мягкое неоновое пятно в углу секции */
 .sec::before{
   content:"";
   position:absolute; z-index:0;
@@ -523,14 +505,13 @@ h3{ font-size:19px; font-weight:700 }
   right:auto; left:-200px; top:auto; bottom:-200px;
   background:radial-gradient(circle, rgba(123,47,255,.13), transparent 62%);
 }
-.sec-inner{ position:relative; z-index:1 }
 
-/* ============================================================
-   8. 01 — О СТУДИИ
-   ============================================================ */
+
+/* --- 01 о студии --- */
+
 .about-grid{ display:grid; gap:38px }
 .about-grid p{ color:var(--fg-mid); font-size:15.5px }
-.about h2{ margin-bottom:26px; text-transform:uppercase }
+.about h2{ margin-bottom:26px }
 
 .figure{ margin:0 }
 .figure figcaption{
@@ -562,7 +543,7 @@ h3{ font-size:19px; font-weight:700 }
   -webkit-background-clip:text; background-clip:text;
   color:transparent; -webkit-text-fill-color:transparent;
 }
-/* Текстовая метрика (не число) — мельче, чтобы не спорила с цифрами */
+/* словом, а не числом — иначе спорит с цифрами по весу */
 .counter b.txt{
   font-size:clamp(15px,3.4vw,20px);
   letter-spacing:.02em;
@@ -571,13 +552,10 @@ h3{ font-size:19px; font-weight:700 }
 }
 .counter span{ font-size:12.5px; color:var(--fg-dim); line-height:1.45 }
 
-/* ============================================================
-   9. 02 — УСЛУГИ
-   ============================================================ */
-.svc-grid{
-  margin-top:44px;
-  display:grid; gap:16px;
-}
+
+/* --- 02 услуги --- */
+
+.svc-grid{ margin-top:44px; display:grid; gap:16px }
 .svc{
   position:relative;
   padding:26px 22px 24px;
@@ -610,7 +588,6 @@ h3{ font-size:19px; font-weight:700 }
   margin:0 0 10px;
 }
 .svc h3{ margin-bottom:18px; text-transform:uppercase; letter-spacing:0 }
-.svc ul{ display:grid; gap:0 }
 .svc li{
   display:flex; align-items:baseline; justify-content:space-between; gap:14px;
   padding:11px 0;
@@ -627,11 +604,7 @@ h3{ font-size:19px; font-weight:700 }
   color:var(--fg-dim);
 }
 
-.svc-foot{
-  margin-top:32px;
-  font-size:14px; color:var(--fg-mid);
-  max-width:62ch;
-}
+.svc-foot{ margin-top:32px; font-size:14px; color:var(--fg-mid); max-width:62ch }
 .svc-foot a, .works-foot a{
   color:var(--fg);
   border-bottom:1px solid rgba(46,123,255,.55);
@@ -639,10 +612,10 @@ h3{ font-size:19px; font-weight:700 }
 }
 .svc-foot a:hover, .works-foot a:hover{ color:var(--blue-2); text-shadow:var(--glow-blue) }
 
-/* ============================================================
-   10. 03 — РАБОТЫ
-   ============================================================ */
-.audio-grid{ display:grid; gap:14px }
+
+/* --- 03 работы --- */
+
+.audio-grid,
 .video-grid{ display:grid; gap:14px }
 .gallery{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px }
 
@@ -660,11 +633,10 @@ h3{ font-size:19px; font-weight:700 }
 }
 .embed iframe{ width:100%; height:100%; border:0; display:block }
 .embed-audio{ min-height:180px }
-.embed-audio iframe{ height:180px }
+.embed-audio iframe{ height:180px }   /* штатная высота плеера Яндекса */
 .embed-video.wide{ aspect-ratio:16/9 }
 .embed-video.tall{ aspect-ratio:9/16 }
 
-/* Плейсхолдер эмбеда */
 .embed-ph{
   position:absolute; inset:0;
   display:grid; place-content:center; justify-items:center; gap:8px;
@@ -675,7 +647,7 @@ h3{ font-size:19px; font-weight:700 }
 }
 .embed-ph b{
   font-family:var(--f-head); font-weight:700;
-  font-size:14px; letter-spacing:.02em; color:var(--fg);
+  font-size:14px; color:var(--fg);
 }
 .embed-ph span{ font-size:12px; color:var(--fg-dim); max-width:26ch }
 .embed-ph-ic{
@@ -702,13 +674,12 @@ h3{ font-size:19px; font-weight:700 }
 
 .works-foot{ margin-top:34px; font-size:14px; color:var(--fg-mid) }
 
-/* ============================================================
-   11. 04 — КОМАНДА
-   ============================================================ */
-.team h2{ margin-bottom:40px; text-transform:uppercase }
+
+/* --- 04 команда --- */
+
+.team h2{ margin-bottom:40px }
 .team-grid{ display:grid; gap:20px }
 .member{
-  display:grid; gap:0;
   border-radius:var(--r);
   overflow:hidden;
   background:var(--glass);
@@ -719,10 +690,6 @@ h3{ font-size:19px; font-weight:700 }
 }
 .member:hover{ border-color:rgba(123,47,255,.42); box-shadow:0 0 36px rgba(93,60,255,.16) }
 .member .ph{ border:0; border-radius:0 }
-/* На телефоне портрет 3:4 съедает слишком много экрана — режем шире */
-@media (max-width:599px){
-  .member .ph{ aspect-ratio:5/4 }
-}
 .member-body{ padding:24px 22px 26px }
 .member .role{
   font-family:var(--mono); font-size:11px;
@@ -740,9 +707,14 @@ h3{ font-size:19px; font-weight:700 }
 .member-body p{ color:var(--fg-mid); font-size:14.5px }
 .member-body p:last-child{ margin-bottom:0 }
 
-/* ============================================================
-   12. 05 — ОТЗЫВЫ
-   ============================================================ */
+/* на телефоне портрет 3:4 занимает пол-экрана — режем шире */
+@media (max-width:599px){
+  .member .ph{ aspect-ratio:5/4 }
+}
+
+
+/* --- 05 отзывы --- */
+
 .rating-head{ display:grid; gap:10px; justify-items:start; margin-bottom:8px }
 .rating-num{
   font-family:var(--f-head); font-weight:900;
@@ -781,7 +753,6 @@ h3{ font-size:19px; font-weight:700 }
   color:var(--fg-dim);
 }
 
-/* Плашка рейтинга Яндекса */
 .yamap-badge{
   margin-top:30px;
   display:inline-flex; align-items:center; gap:14px;
@@ -799,13 +770,19 @@ h3{ font-size:19px; font-weight:700 }
 .yamap-badge:hover{ border-color:rgba(46,123,255,.55); box-shadow:var(--glow-blue); transform:translateY(-2px) }
 .yamap-badge:hover i{ transform:translateX(4px) }
 
-/* ============================================================
-   13. 06 — КОНТАКТЫ
-   ============================================================ */
-.contacts h2{ margin-bottom:38px; text-transform:uppercase }
-.info{ margin:0 0 32px; display:grid; gap:1px; background:var(--line-soft);
-  border:1px solid var(--line-soft); border-radius:var(--r); overflow:hidden }
-.info > div{ background:var(--ink-3); padding:20px 20px }
+
+/* --- 06 контакты --- */
+
+.contacts h2{ margin-bottom:38px }
+.info{
+  margin:0 0 32px;
+  display:grid; gap:1px;
+  background:var(--line-soft);
+  border:1px solid var(--line-soft);
+  border-radius:var(--r);
+  overflow:hidden;
+}
+.info > div{ background:var(--ink-3); padding:20px }
 .info dt{
   font-family:var(--mono); font-size:10.5px;
   letter-spacing:.2em; text-transform:uppercase;
@@ -841,9 +818,9 @@ h3{ font-size:19px; font-weight:700 }
 .map-foot a{ color:var(--fg-mid); border-bottom:1px solid rgba(46,123,255,.45); transition:color .2s, text-shadow .2s }
 .map-foot a:hover{ color:var(--blue-2); text-shadow:var(--glow-blue) }
 
-/* ============================================================
-   14. ФУТЕР
-   ============================================================ */
+
+/* --- подвал --- */
+
 .ftr{ position:relative; background:var(--ink); padding-top:56px }
 .ftr-grid{ display:grid; gap:36px; padding-bottom:44px }
 .ftr-brand .slogan{
@@ -859,9 +836,9 @@ h3{ font-size:19px; font-weight:700 }
 }
 .ftr-col p{ font-size:14px; color:var(--fg-mid) }
 .ftr-col nav{ display:grid; gap:9px }
-.ftr-col nav a{ font-size:14px; color:var(--fg-mid); transition:color .2s, text-shadow .2s; width:fit-content }
+.ftr-col nav a{ font-size:14px; color:var(--fg-mid); width:fit-content }
+.ftr-col nav a, .ftr-col p a{ transition:color .2s, text-shadow .2s }
 .ftr-col nav a:hover, .ftr-col p a:hover{ color:var(--fg); text-shadow:0 0 12px rgba(46,123,255,.5) }
-.ftr-col p a{ transition:color .2s, text-shadow .2s }
 
 .ftr-bot{
   display:flex; flex-wrap:wrap; gap:10px;
@@ -873,9 +850,9 @@ h3{ font-size:19px; font-weight:700 }
 .ftr-bot p{ margin:0 }
 .ftr-bot a:hover{ color:var(--fg) }
 
-/* ============================================================
-   15. МОБИЛЬНАЯ ЗАКРЕПЛЁННАЯ ПАНЕЛЬ
-   ============================================================ */
+
+/* --- нижняя панель на телефоне --- */
+
 .dock{
   position:fixed; left:0; right:0; bottom:0;
   z-index:50;
@@ -903,15 +880,14 @@ h3{ font-size:19px; font-weight:700 }
   color:#fff;
   box-shadow:0 4px 18px rgba(52,63,255,.4);
 }
-/* Чтобы панель не перекрывала подвал */
-body{ padding-bottom:0 }
+/* панель не должна закрывать копирайт */
 @media (max-width:899px){
   .ftr-bot{ padding-bottom:86px }
 }
 
-/* ============================================================
-   16. АНИМАЦИИ ПОЯВЛЕНИЯ (IntersectionObserver)
-   ============================================================ */
+
+/* --- появление при скролле --- */
+
 .js-fade, .js-card{
   opacity:0;
   transform:translateY(18px);
@@ -926,11 +902,9 @@ body{ padding-bottom:0 }
 .js-head .ln:nth-child(2) > span{ transition-delay:.09s }
 .js-head .ln:nth-child(3) > span{ transition-delay:.18s }
 
-/* ============================================================
-   17. АДАПТИВ
-   ============================================================ */
 
-/* ── Узкие телефоны (360px) ── */
+/* --- адаптив --- */
+
 @media (max-width:380px){
   :root{ --pad:16px }
   .hero-inner{ padding-bottom:88px }
@@ -940,7 +914,6 @@ body{ padding-bottom:0 }
   .hero-cta .btn{ width:100% }
 }
 
-/* ── Планшет ── */
 @media (min-width:600px){
   .sec-inner{ padding-block:88px }
   .counters{ grid-template-columns:repeat(4,1fr) }
@@ -957,7 +930,6 @@ body{ padding-bottom:0 }
   .map{ height:400px }
 }
 
-/* ── Десктоп ── */
 @media (min-width:900px){
   :root{ --hdr:72px; --pad:32px }
 
@@ -974,14 +946,11 @@ body{ padding-bottom:0 }
   .about-grid{ grid-template-columns:1.25fr .85fr; gap:64px; align-items:start }
   .svc-grid{ grid-template-columns:repeat(3,1fr); gap:20px }
   .video-grid{ grid-template-columns:repeat(4,1fr) }
-  .embed-video.wide{ grid-column:span 2 }
   .gallery{ grid-template-columns:repeat(3,1fr); gap:14px }
   .rev-grid{ grid-template-columns:repeat(3,1fr); gap:18px }
-  .rev-grid .rev:nth-child(4),
-  .rev-grid .rev:nth-child(5){ grid-column:span 1 }
   .cta-grid{ grid-template-columns:repeat(6,1fr) }
   .team-grid{ gap:28px }
-  .member{ grid-template-columns:minmax(0,320px) 1fr; align-items:stretch }
+  .member{ display:grid; grid-template-columns:minmax(0,320px) 1fr; align-items:stretch }
   .member .ph{ height:100%; aspect-ratio:auto; min-height:340px }
   .member-body{ padding:34px 32px }
   .ftr-grid{ grid-template-columns:1.5fr 1fr 1fr 1fr; gap:48px }
@@ -991,12 +960,11 @@ body{ padding-bottom:0 }
 
 @media (min-width:1200px){
   .sec-inner{ padding-block:140px }
-  .rev-grid{ grid-template-columns:repeat(3,1fr) }
 }
 
-/* ============================================================
-   18. ДОСТУПНОСТЬ: уважение к prefers-reduced-motion
-   ============================================================ */
+
+/* --- когда просят меньше движения --- */
+
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto }
   *,*::before,*::after{
@@ -1011,9 +979,6 @@ body{ padding-bottom:0 }
   .pulse-ring{ animation:none }
 }
 
-/* ============================================================
-   19. ПЕЧАТЬ
-   ============================================================ */
 @media print{
   .hdr,.dock,.mnav,.marquee,.map,.scroll-ind{ display:none !important }
   body{ background:#fff; color:#000 }
