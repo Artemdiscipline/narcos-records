@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#08080A">
+
+<!-- ═══════════════ SEO ═══════════════ -->
+<title>Narcos Records — студия звукозаписи в Тюмени | ул. Сакко, 21</title>
+<meta name="description" content="Narcos Records — студия звукозаписи полного цикла в Тюмени. Запись вокала от 990 ₽/час, сведение и мастеринг, написание бита, съёмка клипов. Рейтинг 5.0 на Яндекс.Картах. Сакко, 21. Круглосуточно, по записи.">
+<meta name="format-detection" content="telephone=yes">
+<link rel="canonical" href="./">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/logo-emblem.svg">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Narcos Records">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Narcos Records — студия звукозаписи в Тюмени">
+<meta property="og:description" content="Запись вокала, сведение, мастеринг, бит и съёмка клипов в Тюмени. 5.0 на Яндекс.Картах. ул. Сакко, 21. Круглосуточно, по записи.">
+<meta property="og:image" content="assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Narcos Records — студия звукозаписи в Тюмени">
+<meta name="twitter:description" content="Запись вокала, сведение, мастеринг, бит и съёмка клипов. Творим музыку вместе.">
+<meta name="twitter:image" content="assets/og-cover.jpg">
+
+<!-- ═══════════════ ШРИФТЫ ═══════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+<!-- Без JS анимации появления не запускаются — показываем контент сразу -->
+<noscript><style>
+  .js-fade,.js-card{ opacity:1 !important; transform:none !important }
+  .js-head .ln > span{ transform:none !important }
+  .dock{ transform:none !important }
+</style></noscript>
+
+<!-- ═══════════════ МИКРОРАЗМЕТКА (JSON-LD) ═══════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Organization", "LocalBusiness"],
+  "name": "Narcos Records",
+  "alternateName": "Наркос Рекордс",
+  "description": "Студия звукозаписи полного цикла в Тюмени: запись вокала, сведение и мастеринг, написание бита, уроки вокала, аренда студии, съёмка клипов и Reels.",
+  "url": "./",
+  "logo": "assets/logo-emblem.svg",
+  "image": "assets/og-cover.jpg",
+  "slogan": "Творим музыку вместе",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Сакко, 21",
+    "addressLocality": "Тюмень",
+    "addressRegion": "Тюменская область",
+    "addressCountry": "RU"
+  },
+  "telephone": "+7 922 062-64-64",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "priceRange": "₽₽",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "bestRating": "5",
+    "reviewCount": "29"
+  },
+  "sameAs": [
+    "https://t.me/narcosrec72",
+    "https://vk.com/narcosrecords",
+    "https://instagram.com/narcosrecords72"
+  ]
+}
+</script>
+</head>
+
+<body id="top">
+
+<!-- ═══════════════════════════════════════════════════════════
+     ШАПКА — sticky-навигация
+     ═══════════════════════════════════════════════════════════ -->
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Narcos Records — на главную">
+      <span class="brand-mark" aria-hidden="true">
+        <img src="assets/logo-emblem.svg" alt="" width="34" height="34">
+      </span>
+      <span class="brand-word">NARCOS<i>RECORDS</i></span>
+    </a>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="#about">О студии</a>
+      <a href="#services">Услуги</a>
+      <a href="#works">Работы</a>
+      <a href="#team">Команда</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+
+    <div class="hdr-act">
+      <a class="hdr-tel" href="tel:+79220626464">+7 (922) 062-64-64</a>
+      <a class="btn btn-solid" href="https://t.me/gonanight" target="_blank" rel="noopener">Записаться</a>
+    </div>
+
+    <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mnav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <i class="hdr-led" aria-hidden="true"></i>
+</header>
+
+<!-- Мобильное меню -->
+<div class="mnav" id="mnav" hidden>
+  <nav aria-label="Мобильная навигация">
+    <a href="#about">О студии</a>
+    <a href="#services">Услуги</a>
+    <a href="#works">Работы</a>
+    <a href="#team">Команда</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+  <div class="mnav-foot">
+    <a class="btn btn-solid" href="https://t.me/gonanight" target="_blank" rel="noopener">Написать в Telegram</a>
+    <a class="btn btn-ghost" href="tel:+79220626464">+7 (922) 062-64-64</a>
+  </div>
+</div>
+
+<main>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════════════════ -->
+<section class="hero" aria-label="Narcos Records — студия звукозаписи в Тюмени">
+  <div class="hero-bg" id="heroBg">
+    <!-- ЗАМЕНИТЬ: assets/photos/studio-01.jpg — главный кадр студии -->
+    <span class="ph ph-hero"><img src="assets/photos/studio-01.jpg" alt="Студия звукозаписи Narcos Records в Тюмени" fetchpriority="high" width="1600" height="1000"></span>
+  </div>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <div class="wrap">
+      <p class="badge js-fade">
+        <span class="badge-star" aria-hidden="true">★</span>
+        <span><b>5.0</b> · 29&nbsp;отзывов на Яндекс.Картах · Тюмень</span>
+      </p>
+
+      <h1 class="js-head">
+        <span class="ln"><span>Твой трек.</span></span>
+        <span class="ln"><span class="chrome">Наша студия.</span></span>
+      </h1>
+
+      <p class="hero-sub js-fade">
+        Профессиональная звукозапись, сведение, написание бита и съёмка клипов в Тюмени.
+        Улица Сакко, 21 — круглосуточно, по предварительной записи.
+      </p>
+
+      <div class="hero-cta js-fade">
+        <a class="btn btn-solid" href="https://t.me/gonanight" target="_blank" rel="noopener">Написать в Telegram</a>
+        <a class="btn btn-ghost" href="#works">Слушать работы</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-ind" aria-hidden="true"><i class="pulse-ring"></i>Scroll</div>
+
+  <!-- ── Бегущая строка по нижней кромке hero ── -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Запись вокала<em>◆</em>Сведение<em>◆</em>Мастеринг<em>◆</em>Написание бита<em>◆</em>Уроки вокала<em>◆</em>Аренда студии<em>◆</em>Съёмка клипов<em>◆</em>Reels<em>◆</em>Хип-хоп<em>◆</em>R&amp;B<em>◆</em>Поп<em>◆</em>Лоу-фай<em>◆</em>Электроника<em>◆</em></span>
+      <span>Запись вокала<em>◆</em>Сведение<em>◆</em>Мастеринг<em>◆</em>Написание бита<em>◆</em>Уроки вокала<em>◆</em>Аренда студии<em>◆</em>Съёмка клипов<em>◆</em>Reels<em>◆</em>Хип-хоп<em>◆</em>R&amp;B<em>◆</em>Поп<em>◆</em>Лоу-фай<em>◆</em>Электроника<em>◆</em></span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     01 — О СТУДИИ
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec about" id="about">
+  <i class="led" aria-hidden="true"></i>
+  <div class="wrap sec-inner">
+    <p class="eyebrow js-fade">01 — О студии</p>
+
+    <div class="about-grid">
+      <div>
+        <h2 class="js-head">
+          <span class="ln"><span>Ночь. Микрофон.</span></span>
+          <span class="ln"><span class="chrome">Твой звук.</span></span>
+        </h2>
+
+        <p class="js-fade">Narcos Records — студия полного цикла в центре Тюмени. Здесь трек проходит весь путь: от первого дубля до готового релиза с обложкой и клипом.</p>
+
+        <p class="js-fade">Запись вокала, сведение и мастеринг, написание бита под задачу, съёмка видео и визуал для соцсетей — всё в одном месте и одной командой. Не нужно искать битмейкера в одном городе, сводящего в другом, а видеографа — в третьем.</p>
+
+        <p class="js-fade">Имя дерзкое, но внутри — тепло и по-человечески. Звукорежиссёр разбирает, что именно вы хотите услышать, помогает с бэками и подачей, а не просто нажимает «запись». Работаем круглосуточно по записи: если вдохновение пришло в три ночи — студия открыта.</p>
+
+        <ul class="ring-list js-fade">
+          <li>Полный цикл: бит → запись → сведение → мастеринг → видео</li>
+          <li>Индивидуальный подход: разбираем референсы и задачу перед сессией</li>
+          <li>Комфортное пространство, где не страшно ошибаться в дубле</li>
+          <li>Круглосуточно, по предварительной записи — включая ночные сессии</li>
+        </ul>
+      </div>
+
+      <figure class="figure js-fade">
+        <!-- ЗАМЕНИТЬ: assets/photos/studio-02.jpg — интерьер / вокальная кабина -->
+        <span class="ph ph-4x5"><img src="assets/photos/studio-02.jpg" alt="Вокальная кабина студии Narcos Records" loading="lazy" width="800" height="1000"></span>
+        <figcaption>Тюмень, ул. Сакко, 21 · круглосуточно</figcaption>
+      </figure>
+    </div>
+
+    <!-- Метрики -->
+    <div class="counters">
+      <div class="counter">
+        <b class="js-count" data-to="5.0" data-dec="1">5.0</b>
+        <span>Рейтинг на Яндекс.Картах</span>
+      </div>
+      <div class="counter">
+        <b class="js-count" data-to="29">29</b>
+        <span>Отзывов клиентов</span>
+      </div>
+      <div class="counter">
+        <b>24/7</b>
+        <span>По предварительной записи</span>
+      </div>
+      <div class="counter">
+        <b class="txt">Полный цикл</b>
+        <span>Звук, бит и видео в одном месте</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     02 — УСЛУГИ И ЦЕНЫ
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec services" id="services">
+  <i class="led" aria-hidden="true"></i>
+  <div class="wrap sec-inner">
+    <p class="eyebrow js-fade">02 — Услуги</p>
+
+    <h2 class="js-head">
+      <span class="ln"><span>Что мы</span></span>
+      <span class="ln"><span class="chrome">делаем.</span></span>
+    </h2>
+
+    <p class="lead js-fade">Точную стоимость подтверждаем при записи — она зависит от объёма работы, тайминга и формата сдачи материала.</p>
+
+    <div class="svc-grid">
+
+      <article class="svc js-card">
+        <p class="num">I</p>
+        <h3>Запись вокала</h3>
+        <ul>
+          <li><span class="nm">Час со звукорежиссёром</span><span class="pr">от 990 ₽</span></li>
+          <li><span class="nm">Ночная сессия, час</span><span class="pr">1 500 ₽</span></li>
+        </ul>
+        <p class="svc-note">Работа с подачей и бэками, эффекты в реальном времени в наушниках — слышно готовое звучание уже во время дубля.</p>
+      </article>
+
+      <article class="svc js-card">
+        <p class="num">II</p>
+        <h3>Сведение и мастеринг</h3>
+        <ul>
+          <li><span class="nm">Трек «под ключ»</span><span class="pr">3 900 ₽</span></li>
+        </ul>
+        <p class="svc-note">Баланс, обработка вокала, финальная громкость под стриминги. Сдаём в WAV и MP3, по запросу — со стемами.</p>
+      </article>
+
+      <article class="svc js-card">
+        <p class="num">III</p>
+        <h3>Написание бита</h3>
+        <ul>
+          <li><span class="nm">Бит под задачу</span><span class="pr req">по запросу</span></li>
+          <li><span class="nm">Аранжировка</span><span class="pr req">по запросу</span></li>
+        </ul>
+        <p class="svc-note">Любые жанры: хип-хоп, R&amp;B, поп, лоу-фай, электроника. Отдаём WAV, MP3 и стемы.</p>
+      </article>
+
+      <article class="svc js-card">
+        <p class="num">IV</p>
+        <h3>Урок вокала</h3>
+        <ul>
+          <li><span class="nm">Занятие с преподавателем</span><span class="pr req">по запросу</span></li>
+          <li><span class="nm">Помощь при записи</span><span class="pr req">по запросу</span></li>
+        </ul>
+        <p class="svc-note">Постановка голоса и работа с микрофоном — от первого трека до уверенного дубля.</p>
+      </article>
+
+      <article class="svc js-card">
+        <p class="num">V</p>
+        <h3>Аренда студии</h3>
+        <ul>
+          <li><span class="nm">Со звукоинженером</span><span class="pr req">по запросу</span></li>
+          <li><span class="nm">Без инженера</span><span class="pr req">по запросу</span></li>
+        </ul>
+        <p class="svc-note">Гибкий тайминг, круглосуточно по записи. Подходит для репетиций, подкастов и своих сессий.</p>
+      </article>
+
+      <article class="svc js-card">
+        <p class="num">VI</p>
+        <h3>Съёмка видео</h3>
+        <ul>
+          <li><span class="nm">Клип</span><span class="pr">от 15 000 ₽</span></li>
+          <li><span class="nm">Сниппет под ключ</span><span class="pr">7 000 ₽</span></li>
+          <li><span class="nm">Рекламный ролик</span><span class="pr">от 6 000 ₽</span></li>
+          <li><span class="nm">Reels до 30 сек</span><span class="pr">4 000 ₽</span></li>
+          <li><span class="nm">Сниппет на студии</span><span class="pr">2 000 ₽</span></li>
+        </ul>
+        <p class="svc-note">Съёмка, монтаж и цвет. Вертикаль под соцсети и горизонталь под YouTube.</p>
+      </article>
+
+    </div>
+
+    <p class="svc-foot js-fade">
+      Точную стоимость подтверждаем при записи.
+      <a href="https://t.me/gonanight" target="_blank" rel="noopener">Напишите в Telegram</a> или позвоните
+      <a href="tel:+79220626464">+7 (922) 062-64-64</a> — подберём формат под задачу.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     03 — РАБОТЫ: аудио, видео, фото
+     ── Ссылки на плееры вставляются в помеченные места ниже ──
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec works" id="works">
+  <i class="led" aria-hidden="true"></i>
+  <div class="wrap sec-inner">
+    <p class="eyebrow js-fade">03 — Работы</p>
+
+    <h2 class="js-head">
+      <span class="ln"><span>Как это</span></span>
+      <span class="ln"><span class="chrome">звучит.</span></span>
+    </h2>
+
+    <p class="lead js-fade">Треки, записанные и сведённые на Narcos Records, клипы и сниппеты с наших съёмок.</p>
+
+    <!-- ── 3.1 Аудио: Яндекс.Музыка ──
+         ВСТАВИТЬ ССЫЛКУ: замените src у iframe на код вставки Яндекс.Музыки, например
+         https://music.yandex.ru/iframe/track/ID/ALBUM_ID  или  .../iframe/album/ALBUM_ID
+         После вставки удалите блок <div class="embed-ph">…</div> внутри карточки. -->
+    <h3 class="sub-h js-fade">Треки</h3>
+    <div class="audio-grid">
+
+      <div class="embed embed-audio js-card">
+        <div class="embed-ph">
+          <span class="embed-ph-ic" aria-hidden="true">♪</span>
+          <b>Плеер трека №1</b>
+          <span>Место под iframe Яндекс.Музыки</span>
+        </div>
+        <!-- <iframe src="https://music.yandex.ru/iframe/track/ТРЕК/АЛЬБОМ" title="Трек Narcos Records" loading="lazy" frameborder="0"></iframe> -->
+      </div>
+
+      <div class="embed embed-audio js-card">
+        <div class="embed-ph">
+          <span class="embed-ph-ic" aria-hidden="true">♪</span>
+          <b>Плеер трека №2</b>
+          <span>Место под iframe Яндекс.Музыки</span>
+        </div>
+        <!-- <iframe src="https://music.yandex.ru/iframe/track/ТРЕК/АЛЬБОМ" title="Трек Narcos Records" loading="lazy" frameborder="0"></iframe> -->
+      </div>
+
+      <div class="embed embed-audio js-card">
+        <div class="embed-ph">
+          <span class="embed-ph-ic" aria-hidden="true">♪</span>
+          <b>Плеер трека №3</b>
+          <span>Место под iframe Яндекс.Музыки</span>
+        </div>
+        <!-- <iframe src="https://music.yandex.ru/iframe/track/ТРЕК/АЛЬБОМ" title="Трек Narcos Records" loading="lazy" frameborder="0"></iframe> -->
+      </div>
+
+      <div class="embed embed-audio js-card">
+        <div class="embed-ph">
+          <span class="embed-ph-ic" aria-hidden="true">♪</span>
+          <b>Плеер трека №4</b>
+          <span>Место под iframe Яндекс.Музыки</span>
+        </div>
+        <!-- <iframe src="https://music.yandex.ru/iframe/track/ТРЕК/АЛЬБОМ" title="Трек Narcos Records" loading="lazy" frameborder="0"></iframe> -->
+      </div>
+
+    </div>
+
+    <!-- ── 3.2 Видео: клипы и Reels ──
+         ВСТАВИТЬ ССЫЛКУ: раскомментируйте iframe и подставьте адрес:
+         YouTube  → https://www.youtube.com/embed/ВИДЕО_ID
+         VK Видео → https://vk.com/video_ext.php?oid=…&id=…&hash=…
+         Telegram → https://t.me/narcosrec72/НОМЕР_ПОСТА (виджет) -->
+    <h3 class="sub-h js-fade">Клипы и Reels</h3>
+    <div class="video-grid">
+
+      <div class="embed embed-video wide js-card">
+        <div class="embed-ph">
+          <span class="embed-ph-ic play" aria-hidden="true"></span>
+          <b>Клип №1</b>
+          <span>Место под YouTube / VK-эмбед · 16:9</span>
+        </div>
+        <!-- <iframe src="https://www.youtube.com/embed/ВИДЕО_ID" title="Клип Narcos Records" loading="lazy" allowfullscreen frameborder="0"></iframe> -->
+      </div>
+
+      <div class="embed embed-video wide js-card">
+        <div class="embed-ph">
+          <span class="embed-ph-ic play" aria-hidden="true"></span>
+          <b>Клип №2</b>
+          <span>Место под YouTube / VK-эмбед · 16:9</span>
+        </div>
+        <!-- <iframe src="https://www.youtube.com/embed/ВИДЕО_ID" title="Клип Narcos Records" loading="lazy" allowfullscreen frameborder="0"></iframe> -->
+      </div>
+
+      <div class="embed embed-video tall js-card">
+        <div class="embed-ph">
+          <span class="embed-ph-ic play" aria-hidden="true"></span>
+          <b>Reels №1</b>
+          <span>Вертикаль 9:16</span>
+        </div>
+        <!-- <iframe src="ССЫЛКА_НА_ВЕРТИКАЛЬНОЕ_ВИДЕО" title="Reels Narcos Records" loading="lazy" allowfullscreen frameborder="0"></iframe> -->
+      </div>
+
+      <div class="embed embed-video tall js-card">
+        <div class="embed-ph">
+          <span class="embed-ph-ic play" aria-hidden="true"></span>
+          <b>Reels №2</b>
+          <span>Вертикаль 9:16</span>
+        </div>
+        <!-- <iframe src="ССЫЛКА_НА_ВЕРТИКАЛЬНОЕ_ВИДЕО" title="Reels Narcos Records" loading="lazy" allowfullscreen frameborder="0"></iframe> -->
+      </div>
+
+      <div class="embed embed-video tall js-card">
+        <div class="embed-ph">
+          <span class="embed-ph-ic play" aria-hidden="true"></span>
+          <b>Сниппет</b>
+          <span>Вертикаль 9:16</span>
+        </div>
+        <!-- <iframe src="ССЫЛКА_НА_ВЕРТИКАЛЬНОЕ_ВИДЕО" title="Сниппет Narcos Records" loading="lazy" allowfullscreen frameborder="0"></iframe> -->
+      </div>
+
+    </div>
+
+    <!-- ── 3.3 Фотогалерея студии ──
+         ЗАМЕНИТЬ: файлы assets/photos/studio-0X.jpg -->
+    <h3 class="sub-h js-fade">Студия</h3>
+    <div class="gallery">
+      <figure class="gi js-card"><span class="ph ph-4x3"><img src="assets/photos/studio-03.jpg" alt="Пульт и рабочее место звукорежиссёра" loading="lazy" width="800" height="600"></span></figure>
+      <figure class="gi js-card"><span class="ph ph-4x3"><img src="assets/photos/studio-04.jpg" alt="Микрофон в вокальной кабине" loading="lazy" width="800" height="600"></span></figure>
+      <figure class="gi js-card"><span class="ph ph-4x3"><img src="assets/photos/studio-05.jpg" alt="Неоновая подсветка в зале студии" loading="lazy" width="800" height="600"></span></figure>
+      <figure class="gi js-card"><span class="ph ph-4x3"><img src="assets/photos/studio-06.jpg" alt="Запись вокала на сессии" loading="lazy" width="800" height="600"></span></figure>
+      <figure class="gi js-card"><span class="ph ph-4x3"><img src="assets/photos/studio-07.jpg" alt="Зона отдыха студии Narcos Records" loading="lazy" width="800" height="600"></span></figure>
+      <figure class="gi js-card"><span class="ph ph-4x3"><img src="assets/photos/studio-08.jpg" alt="Съёмочная площадка для клипов" loading="lazy" width="800" height="600"></span></figure>
+    </div>
+
+    <p class="works-foot js-fade">
+      Больше треков и клипов — в канале
+      <a href="https://t.me/narcosrec72" target="_blank" rel="noopener">t.me/narcosrec72</a>
+      и в <a href="https://vk.com/narcosrecords" target="_blank" rel="noopener">группе ВКонтакте</a>.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     04 — КОМАНДА
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec team" id="team">
+  <i class="led" aria-hidden="true"></i>
+  <div class="wrap sec-inner">
+    <p class="eyebrow js-fade">04 — Команда</p>
+
+    <h2 class="js-head">
+      <span class="ln"><span>Кто ведёт</span></span>
+      <span class="ln"><span class="chrome">вашу сессию.</span></span>
+    </h2>
+
+    <div class="team-grid">
+
+      <article class="member js-card">
+        <!-- ЗАМЕНИТЬ: assets/team/roman.jpg -->
+        <span class="ph ph-3x4"><img src="assets/team/roman.jpg" alt="Роман — звукорежиссёр студии Narcos Records" loading="lazy" width="600" height="800"></span>
+        <div class="member-body">
+          <p class="role">Звукорежиссёр · преподаватель</p>
+          <h3>Роман</h3>
+          <p>Ведёт запись и сведение — сердце студии. Именно его чаще всего благодарят в отзывах: за спокойствие, терпение к дублям и умение объяснить, что сделать с подачей, чтобы трек зазвучал.</p>
+          <p>Помогает с бэками, подбирает обработку под голос и жанр, преподаёт вокал тем, кто только начинает.</p>
+        </div>
+      </article>
+
+      <article class="member js-card">
+        <!-- ЗАМЕНИТЬ: assets/team/valeriy.jpg -->
+        <span class="ph ph-3x4"><img src="assets/team/valeriy.jpg" alt="Валерий — видеограф студии Narcos Records" loading="lazy" width="600" height="800"></span>
+        <div class="member-body">
+          <p class="role">Видеограф</p>
+          <h3>Валерий</h3>
+          <p>Отвечает за визуал: клипы, сниппеты, рекламные ролики и вертикалка под соцсети. Снимает и монтирует так, чтобы картинка попадала в настроение трека.</p>
+          <p>Съёмка возможна прямо на студии — записали и сразу сняли материал под релиз.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     05 — ОТЗЫВЫ
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec reviews" id="reviews">
+  <i class="led" aria-hidden="true"></i>
+  <div class="wrap sec-inner">
+    <p class="eyebrow js-fade">05 — Отзывы</p>
+
+    <div class="rating-head">
+      <div class="rating-num chrome js-fade">5.0</div>
+      <div class="stars js-fade" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 1.8l3.1 6.5 7 1-5.1 5 1.2 7.1L12 18l-6.2 3.4 1.2-7.1-5.1-5 7-1z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 1.8l3.1 6.5 7 1-5.1 5 1.2 7.1L12 18l-6.2 3.4 1.2-7.1-5.1-5 7-1z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 1.8l3.1 6.5 7 1-5.1 5 1.2 7.1L12 18l-6.2 3.4 1.2-7.1-5.1-5 7-1z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 1.8l3.1 6.5 7 1-5.1 5 1.2 7.1L12 18l-6.2 3.4 1.2-7.1-5.1-5 7-1z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 1.8l3.1 6.5 7 1-5.1 5 1.2 7.1L12 18l-6.2 3.4 1.2-7.1-5.1-5 7-1z"/></svg>
+      </div>
+      <p class="rating-meta js-fade">29 отзывов на Яндекс.Картах · Тюмень, ул. Сакко, 21</p>
+    </div>
+
+    <p class="lead js-fade rev-lead">Ниже — о чём чаще всего пишут клиенты. Тексты пересказаны своими словами.</p>
+
+    <div class="rev-grid">
+
+      <blockquote class="rev js-card">
+        <p>Называют лучшей студией Тюмени: приходят за звуком и остаются надолго, потому что результат стабильно совпадает с ожиданиями.</p>
+        <footer>Отзыв на Яндекс.Картах</footer>
+      </blockquote>
+
+      <blockquote class="rev js-card">
+        <p>Отмечают, что здесь записываются и приезжающие в город популярные исполнители — уровень площадки это выдерживает.</p>
+        <footer>Отзыв на Яндекс.Картах</footer>
+      </blockquote>
+
+      <blockquote class="rev js-card">
+        <p>Хвалят индивидуальный подход: звукорежиссёр слушает задачу, а не гонит по шаблону, и подстраивается под артиста.</p>
+        <footer>Отзыв на Яндекс.Картах</footer>
+      </blockquote>
+
+      <blockquote class="rev js-card">
+        <p>Пишут про помощь с бэками и звучанием — подсказывают, где добавить, где убрать, чтобы трек собрался.</p>
+        <footer>Отзыв на Яндекс.Картах</footer>
+      </blockquote>
+
+      <blockquote class="rev js-card">
+        <p>Упоминают быстрое сведение и тёплую, дружелюбную атмосферу: в студии комфортно даже на первой записи.</p>
+        <footer>Отзыв на Яндекс.Картах</footer>
+      </blockquote>
+
+    </div>
+
+    <!-- ВСТАВИТЬ ССЫЛКУ: прямой адрес карточки студии на Яндекс.Картах -->
+    <a class="yamap-badge js-fade" href="https://yandex.ru/maps/?text=Narcos%20Records%20Тюмень%20Сакко%2021" target="_blank" rel="noopener">
+      <b>5.0&nbsp;★</b>
+      <span>29 отзывов на Яндекс.Картах</span>
+      <i aria-hidden="true">→</i>
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     06 — КОНТАКТЫ
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec contacts" id="contacts">
+  <i class="led" aria-hidden="true"></i>
+  <div class="wrap sec-inner">
+    <p class="eyebrow js-fade">06 — Контакты</p>
+
+    <h2 class="js-head">
+      <span class="ln"><span>Как нас</span></span>
+      <span class="ln"><span class="chrome">найти.</span></span>
+    </h2>
+
+    <dl class="info js-fade">
+      <div>
+        <dt>Адрес</dt>
+        <dd>Тюмень, ул. Сакко, 21
+          <small>Центр города</small>
+        </dd>
+      </div>
+      <div>
+        <dt>Режим работы</dt>
+        <dd>Круглосуточно
+          <small>По предварительной записи</small>
+        </dd>
+      </div>
+      <div>
+        <dt>Телефон</dt>
+        <dd><a href="tel:+79220626464">+7 (922) 062-64-64</a>
+          <small>Запись в мессенджерах: <a href="tel:+79675409306">+7 (967) 540-93-06</a></small>
+        </dd>
+      </div>
+    </dl>
+
+    <div class="cta-grid js-fade">
+      <a class="btn btn-solid" href="https://t.me/gonanight" target="_blank" rel="noopener">Telegram — запись</a>
+      <a class="btn btn-ghost" href="https://t.me/narcosrec72" target="_blank" rel="noopener">Telegram-канал</a>
+      <a class="btn btn-ghost" href="https://wa.me/79675409306" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-ghost" href="viber://chat?number=%2B79675409306">Viber</a>
+      <a class="btn btn-ghost" href="https://vk.com/narcosrecords" target="_blank" rel="noopener">ВКонтакте</a>
+      <a class="btn btn-ghost" href="https://instagram.com/narcosrecords72" target="_blank" rel="noopener">Instagram</a>
+    </div>
+
+    <div class="map js-fade">
+      <iframe src="https://yandex.ru/map-widget/v1/?text=%D0%A2%D1%8E%D0%BC%D0%B5%D0%BD%D1%8C%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%A1%D0%B0%D0%BA%D0%BA%D0%BE%2C%2021&z=17"
+              title="Narcos Records на карте — Тюмень, улица Сакко, 21"
+              loading="lazy" allowfullscreen frameborder="0"></iframe>
+    </div>
+    <p class="map-foot js-fade">
+      Не открывается карта? —
+      <a href="https://yandex.ru/maps/?text=%D0%A2%D1%8E%D0%BC%D0%B5%D0%BD%D1%8C%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%A1%D0%B0%D0%BA%D0%BA%D0%BE%2C%2021" target="_blank" rel="noopener">открыть Сакко, 21 на Яндекс.Картах</a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════
+     ФУТЕР
+     ═══════════════════════════════════════════════════════════ -->
+<footer class="ftr">
+  <i class="led" aria-hidden="true"></i>
+  <div class="wrap ftr-grid">
+    <div class="ftr-brand">
+      <span class="brand-word big">NARCOS<i>RECORDS</i></span>
+      <p class="slogan chrome">Творим музыку вместе</p>
+      <p class="ftr-desc">Студия звукозаписи полного цикла в Тюмени: запись, сведение, мастеринг, бит, съёмка клипов.</p>
+    </div>
+
+    <div class="ftr-col">
+      <h4>Разделы</h4>
+      <nav aria-label="Навигация в подвале">
+        <a href="#about">О студии</a>
+        <a href="#services">Услуги</a>
+        <a href="#works">Работы</a>
+        <a href="#team">Команда</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </div>
+
+    <div class="ftr-col">
+      <h4>Контакты</h4>
+      <p>Тюмень, ул. Сакко, 21<br>Круглосуточно, по записи</p>
+      <p>
+        <a href="tel:+79220626464">+7 (922) 062-64-64</a><br>
+        <a href="tel:+79675409306">+7 (967) 540-93-06</a>
+      </p>
+    </div>
+
+    <div class="ftr-col">
+      <h4>Мы в сети</h4>
+      <nav class="soc" aria-label="Социальные сети">
+        <a href="https://t.me/gonanight" target="_blank" rel="noopener">Telegram — запись</a>
+        <a href="https://t.me/narcosrec72" target="_blank" rel="noopener">Telegram-канал</a>
+        <a href="https://wa.me/79675409306" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="viber://chat?number=%2B79675409306">Viber</a>
+        <a href="https://vk.com/narcosrecords" target="_blank" rel="noopener">ВКонтакте</a>
+        <a href="https://instagram.com/narcosrecords72" target="_blank" rel="noopener">Instagram</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="wrap ftr-bot">
+    <p>© 2026 Narcos Records · Тюмень</p>
+    <p><a href="#top">Наверх ↑</a></p>
+  </div>
+</footer>
+
+<!-- Мобильная закреплённая панель -->
+<nav class="dock" id="dock" aria-label="Быстрая связь">
+  <a class="dock-solid" href="https://t.me/gonanight" target="_blank" rel="noopener">Написать в Telegram</a>
+  <a href="tel:+79220626464">Позвонить</a>
+</nav>
+
+<script src="script.js" defer></script>
+</body>
+</html>
