@@ -574,15 +574,16 @@ h3{ font-size:19px; font-weight:700 }
 
 /* --- 02 услуги --- */
 
-.svc-grid{ margin-top:56px; display:grid; gap:1px; background:var(--hair) }
+/* Линии на самих карточках, а не фоном сетки: услуг восемь, в три колонки
+   последний ряд неполный — фон сетки светился бы в пустой ячейке. */
+.svc-grid{ margin-top:56px; display:grid; border-top:1px solid var(--hair) }
 .svc{
   position:relative;
   padding:34px 28px 32px;
-  background:var(--ink);
+  border-bottom:1px solid var(--hair);
   transition:background .45s ease;
 }
-.services .svc{ background:var(--ink-2) }
-.services .svc:hover{ background:var(--ink-3) }
+.svc:hover{ background:var(--ink-3) }
 
 .svc .num{
   font-family:var(--mono); font-weight:400;
@@ -630,8 +631,10 @@ h3{ font-size:19px; font-weight:700 }
 
 .audio-grid,
 .video-grid{ display:grid; gap:16px }
-/* фото квадратные: на телефоне в одну колонку — так их видно, а не разглядываешь */
-.gallery{ display:grid; grid-template-columns:1fr; gap:12px }
+/* Кадров девять. На телефоне две колонки, последний растянут на обе —
+   иначе он висел бы половинкой в пустом ряду. */
+.gallery{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px }
+.gallery .gi:last-child{ grid-column:span 2 }
 
 .embed{
   position:relative;
@@ -924,10 +927,13 @@ h3{ font-size:19px; font-weight:700 }
   .counter:nth-child(odd){ padding-left:20px }
   .counter:first-child{ padding-left:0 }
   .svc-grid{ grid-template-columns:repeat(2,1fr) }
+  .svc{ border-right:1px solid var(--hair) }
+  .svc:nth-child(2n){ border-right:0 }
   .audio-grid{ grid-template-columns:repeat(2,1fr) }
   .video-grid{ grid-template-columns:repeat(2,1fr) }
   .embed-video.wide{ grid-column:span 2 }
   .gallery{ grid-template-columns:repeat(3,1fr); gap:14px }
+  .gallery .gi:last-child{ grid-column:auto }
   .rev-grid{ grid-template-columns:repeat(2,1fr) }
   .rev{ border-right:1px solid var(--hair) }
   .rev:nth-child(2n){ border-right:0 }
@@ -956,6 +962,10 @@ h3{ font-size:19px; font-weight:700 }
   .about-grid{ grid-template-columns:1.3fr .8fr; gap:80px; align-items:start }
   .svc-grid{ grid-template-columns:repeat(3,1fr) }
   .svc{ padding:40px 32px 36px }
+  .svc:nth-child(2n){ border-right:1px solid var(--hair) }
+  .svc:nth-child(3n){ border-right:0 }
+  /* в неполном последнем ряду линия висела бы в пустоте */
+  .svc:last-child{ border-right:0 }
   .video-grid{ grid-template-columns:repeat(4,1fr) }
   .gallery{ grid-template-columns:repeat(3,1fr); gap:16px }
   .rev-grid{ grid-template-columns:repeat(3,1fr) }
