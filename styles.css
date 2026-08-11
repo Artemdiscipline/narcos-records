@@ -149,6 +149,7 @@ ul{ margin:0; padding:0; list-style:none }
 }
 .ph.is-empty img{ display:none }
 
+.ph-1x1{ aspect-ratio:1 }
 .ph-4x3{ aspect-ratio:4/3 }
 .ph-4x5{ aspect-ratio:4/5 }
 .ph-3x4{ aspect-ratio:3/4 }
@@ -629,7 +630,8 @@ h3{ font-size:19px; font-weight:700 }
 
 .audio-grid,
 .video-grid{ display:grid; gap:16px }
-.gallery{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px }
+/* фото квадратные: на телефоне в одну колонку — так их видно, а не разглядываешь */
+.gallery{ display:grid; grid-template-columns:1fr; gap:12px }
 
 .embed{
   position:relative;
@@ -925,7 +927,7 @@ h3{ font-size:19px; font-weight:700 }
   .audio-grid{ grid-template-columns:repeat(2,1fr) }
   .video-grid{ grid-template-columns:repeat(2,1fr) }
   .embed-video.wide{ grid-column:span 2 }
-  .gallery{ grid-template-columns:repeat(3,1fr) }
+  .gallery{ grid-template-columns:repeat(3,1fr); gap:14px }
   .rev-grid{ grid-template-columns:repeat(2,1fr) }
   .rev{ border-right:1px solid var(--hair) }
   .rev:nth-child(2n){ border-right:0 }
