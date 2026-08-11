@@ -631,10 +631,8 @@ h3{ font-size:19px; font-weight:700 }
 
 .audio-grid,
 .video-grid{ display:grid; gap:16px }
-/* Кадров девять. На телефоне две колонки, последний растянут на обе —
-   иначе он висел бы половинкой в пустом ряду. */
+/* Кадров шесть: на телефоне две колонки, дальше три — ряды ровные в обоих. */
 .gallery{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px }
-.gallery .gi:last-child{ grid-column:span 2 }
 
 .embed{
   position:relative;
@@ -933,7 +931,6 @@ h3{ font-size:19px; font-weight:700 }
   .video-grid{ grid-template-columns:repeat(2,1fr) }
   .embed-video.wide{ grid-column:span 2 }
   .gallery{ grid-template-columns:repeat(3,1fr); gap:14px }
-  .gallery .gi:last-child{ grid-column:auto }
   .rev-grid{ grid-template-columns:repeat(2,1fr) }
   .rev{ border-right:1px solid var(--hair) }
   .rev:nth-child(2n){ border-right:0 }
