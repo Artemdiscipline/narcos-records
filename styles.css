@@ -642,13 +642,27 @@ h3{ font-size:19px; font-weight:700 }
   font-family:var(--f-head); font-weight:700;
   font-size:14px; letter-spacing:-.01em; color:var(--fg);
 }
-.track figcaption a{
+/* имя исполнителя ведёт на его страницу — подчёркивание проявляется на ховере */
+.track figcaption b a{
+  position:relative;
+  color:inherit;
+  transition:color .3s ease;
+}
+.track figcaption b a::after{
+  content:""; position:absolute; left:0; right:0; bottom:-2px; height:1px;
+  background:currentColor; opacity:0;
+  transition:opacity .3s ease;
+}
+.track figcaption b a:hover{ color:var(--chrome-1) }
+.track figcaption b a:hover::after{ opacity:.6 }
+
+.track figcaption a.alt{
   font-family:var(--mono); font-size:10px;
   letter-spacing:.18em; text-transform:uppercase;
   color:var(--fg-dim);
   transition:color .3s ease;
 }
-.track figcaption a:hover{ color:var(--fg-mid) }
+.track figcaption a.alt:hover{ color:var(--fg-mid) }
 /* Кадров шесть: на телефоне две колонки, дальше три — ряды ровные в обоих. */
 .gallery{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px }
 
