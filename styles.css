@@ -629,8 +629,26 @@ h3{ font-size:19px; font-weight:700 }
 
 /* --- 03 работы --- */
 
-.audio-grid,
-.video-grid{ display:grid; gap:16px }
+.audio-grid{ display:grid; gap:18px }
+.video-grid{ display:grid; gap:18px }
+
+/* плеер/клип + подпись под ним */
+.track, .clip{ margin:0 }
+.track figcaption, .clip figcaption{
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 14px;
+  padding-top:14px;
+}
+.track figcaption b, .clip figcaption b{
+  font-family:var(--f-head); font-weight:700;
+  font-size:14px; letter-spacing:-.01em; color:var(--fg);
+}
+.track figcaption a{
+  font-family:var(--mono); font-size:10px;
+  letter-spacing:.18em; text-transform:uppercase;
+  color:var(--fg-dim);
+  transition:color .3s ease;
+}
+.track figcaption a:hover{ color:var(--fg-mid) }
 /* Кадров шесть: на телефоне две колонки, дальше три — ряды ровные в обоих. */
 .gallery{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px }
 
@@ -927,9 +945,6 @@ h3{ font-size:19px; font-weight:700 }
   .svc-grid{ grid-template-columns:repeat(2,1fr) }
   .svc{ border-right:1px solid var(--hair) }
   .svc:nth-child(2n){ border-right:0 }
-  .audio-grid{ grid-template-columns:repeat(2,1fr) }
-  .video-grid{ grid-template-columns:repeat(2,1fr) }
-  .embed-video.wide{ grid-column:span 2 }
   .gallery{ grid-template-columns:repeat(3,1fr); gap:14px }
   .rev-grid{ grid-template-columns:repeat(2,1fr) }
   .rev{ border-right:1px solid var(--hair) }
@@ -963,7 +978,10 @@ h3{ font-size:19px; font-weight:700 }
   .svc:nth-child(3n){ border-right:0 }
   /* в неполном последнем ряду линия висела бы в пустоте */
   .svc:last-child{ border-right:0 }
-  .video-grid{ grid-template-columns:repeat(4,1fr) }
+  .audio-grid{ grid-template-columns:repeat(3,1fr) }
+  /* первый клип во всю ширину, два других под ним */
+  .video-grid{ grid-template-columns:repeat(2,1fr) }
+  .clip:first-child{ grid-column:span 2 }
   .gallery{ grid-template-columns:repeat(3,1fr); gap:16px }
   .rev-grid{ grid-template-columns:repeat(3,1fr) }
   .rev:nth-child(2n){ border-right:1px solid var(--hair) }

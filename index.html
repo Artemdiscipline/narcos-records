@@ -354,100 +354,77 @@
       <span class="ln"><span class="chrome">звучит.</span></span>
     </h2>
 
-    <p class="lead js-fade">Треки, записанные и сведённые здесь, и видео с наших съёмок.</p>
+    <p class="lead js-fade">Треки, записанные и сведённые здесь, и клипы с наших съёмок.</p>
 
-    <!-- Треки. Раскомментировать iframe, вставить код Яндекс.Музыки
-         (music.yandex.ru/iframe/track/ТРЕК/АЛЬБОМ) и удалить .embed-ph рядом. -->
+    <!-- Треки. Плеер Яндекс.Музыки: /iframe/track/ТРЕК/АЛЬБОМ — оба числа
+         берутся из адреса трека. Штатная высота плеера 180 px. -->
     <h3 class="sub-h js-fade">Треки</h3>
     <div class="audio-grid">
 
-      <div class="embed embed-audio js-card">
-        <div class="embed-ph">
-          <span class="embed-ph-ic" aria-hidden="true">♪</span>
-          <b>Плеер трека №1</b>
-          <span>Место под iframe Яндекс.Музыки</span>
+      <figure class="track js-card">
+        <div class="embed embed-audio">
+          <iframe src="https://music.yandex.ru/iframe/track/123896954/30294700"
+                  title="zayatz — целую" loading="lazy" frameborder="0"></iframe>
         </div>
-        <!-- <iframe src="https://music.yandex.ru/iframe/track/ТРЕК/АЛЬБОМ" title="Трек Narcos Records" loading="lazy" frameborder="0"></iframe> -->
-      </div>
+        <figcaption>
+          <b>zayatz — целую</b>
+          <a href="https://vk.ru/music/album/-2000327285_20327285_f9e6705a5e22b0ad7c" target="_blank" rel="noopener">Слушать во ВКонтакте</a>
+        </figcaption>
+      </figure>
 
-      <div class="embed embed-audio js-card">
-        <div class="embed-ph">
-          <span class="embed-ph-ic" aria-hidden="true">♪</span>
-          <b>Плеер трека №2</b>
-          <span>Место под iframe Яндекс.Музыки</span>
+      <figure class="track js-card">
+        <div class="embed embed-audio">
+          <iframe src="https://music.yandex.ru/iframe/track/141600416/37681883"
+                  title="SHALUTA — парфюм" loading="lazy" frameborder="0"></iframe>
         </div>
-        <!-- <iframe src="https://music.yandex.ru/iframe/track/ТРЕК/АЛЬБОМ" title="Трек Narcos Records" loading="lazy" frameborder="0"></iframe> -->
-      </div>
+        <figcaption>
+          <b>SHALUTA — парфюм</b>
+          <a href="https://vk.ru/music/album/-2000875427_24875427_8c3784d66867ae40e4" target="_blank" rel="noopener">Слушать во ВКонтакте</a>
+        </figcaption>
+      </figure>
 
-      <div class="embed embed-audio js-card">
-        <div class="embed-ph">
-          <span class="embed-ph-ic" aria-hidden="true">♪</span>
-          <b>Плеер трека №3</b>
-          <span>Место под iframe Яндекс.Музыки</span>
+      <figure class="track js-card">
+        <div class="embed embed-audio">
+          <iframe src="https://music.yandex.ru/iframe/track/148578817/40830049"
+                  title="GONANIGHT, NELYA — Эхо" loading="lazy" frameborder="0"></iframe>
         </div>
-        <!-- <iframe src="https://music.yandex.ru/iframe/track/ТРЕК/АЛЬБОМ" title="Трек Narcos Records" loading="lazy" frameborder="0"></iframe> -->
-      </div>
-
-      <div class="embed embed-audio js-card">
-        <div class="embed-ph">
-          <span class="embed-ph-ic" aria-hidden="true">♪</span>
-          <b>Плеер трека №4</b>
-          <span>Место под iframe Яндекс.Музыки</span>
-        </div>
-        <!-- <iframe src="https://music.yandex.ru/iframe/track/ТРЕК/АЛЬБОМ" title="Трек Narcos Records" loading="lazy" frameborder="0"></iframe> -->
-      </div>
+        <figcaption>
+          <b>GONANIGHT, NELYA — Эхо</b>
+          <a href="https://vk.ru/music/album/-2000843615_26843615_45acc9b4b49bd6e92d" target="_blank" rel="noopener">Слушать во ВКонтакте</a>
+        </figcaption>
+      </figure>
 
     </div>
 
-    <!-- Видео. YouTube → youtube.com/embed/ID, VK → vk.com/video_ext.php?...
-         .wide = 16:9, .tall = вертикалка 9:16 -->
-    <h3 class="sub-h js-fade">Клипы и Reels</h3>
+    <!-- Клипы. VK-эмбед: vk.com/video_ext.php?oid=ВЛАДЕЛЕЦ&id=ВИДЕО —
+         числа из адреса вида video-186623026_456239533 (владелец со знаком минус).
+         Класс wide = 16:9, tall = вертикалка 9:16. -->
+    <h3 class="sub-h js-fade">Клипы</h3>
     <div class="video-grid">
 
-      <div class="embed embed-video wide js-card">
-        <div class="embed-ph">
-          <span class="embed-ph-ic play" aria-hidden="true"></span>
-          <b>Клип №1</b>
-          <span>Место под YouTube / VK-эмбед · 16:9</span>
+      <figure class="clip js-card">
+        <div class="embed embed-video wide">
+          <iframe src="https://vk.com/video_ext.php?oid=-186623026&id=456239533&hd=2"
+                  title="Клип DEATHCHANNEL" loading="lazy" allowfullscreen frameborder="0"></iframe>
         </div>
-        <!-- <iframe src="https://www.youtube.com/embed/ВИДЕО_ID" title="Клип Narcos Records" loading="lazy" allowfullscreen frameborder="0"></iframe> -->
-      </div>
+        <figcaption><b>DEATHCHANNEL</b></figcaption>
+      </figure>
 
-      <div class="embed embed-video wide js-card">
-        <div class="embed-ph">
-          <span class="embed-ph-ic play" aria-hidden="true"></span>
-          <b>Клип №2</b>
-          <span>Место под YouTube / VK-эмбед · 16:9</span>
+      <figure class="clip js-card">
+        <div class="embed embed-video wide">
+          <iframe src="https://vk.com/video_ext.php?oid=-163202178&id=456239878&hd=2"
+                  title="Клип «Латверия»" loading="lazy" allowfullscreen frameborder="0"></iframe>
         </div>
-        <!-- <iframe src="https://www.youtube.com/embed/ВИДЕО_ID" title="Клип Narcos Records" loading="lazy" allowfullscreen frameborder="0"></iframe> -->
-      </div>
+        <figcaption><b>Латверия</b></figcaption>
+      </figure>
 
-      <div class="embed embed-video tall js-card">
-        <div class="embed-ph">
-          <span class="embed-ph-ic play" aria-hidden="true"></span>
-          <b>Reels №1</b>
-          <span>Вертикаль 9:16</span>
+      <figure class="clip js-card">
+        <div class="embed embed-video wide">
+          <iframe src="https://vk.com/video_ext.php?oid=-122840213&id=456239079&hd=2"
+                  title="Клип «ЕР»" loading="lazy" allowfullscreen frameborder="0"></iframe>
         </div>
-        <!-- <iframe src="ССЫЛКА" title="Reels Narcos Records" loading="lazy" allowfullscreen frameborder="0"></iframe> -->
-      </div>
-
-      <div class="embed embed-video tall js-card">
-        <div class="embed-ph">
-          <span class="embed-ph-ic play" aria-hidden="true"></span>
-          <b>Reels №2</b>
-          <span>Вертикаль 9:16</span>
-        </div>
-        <!-- <iframe src="ССЫЛКА" title="Reels Narcos Records" loading="lazy" allowfullscreen frameborder="0"></iframe> -->
-      </div>
-
-      <div class="embed embed-video tall js-card">
-        <div class="embed-ph">
-          <span class="embed-ph-ic play" aria-hidden="true"></span>
-          <b>Сниппет</b>
-          <span>Вертикаль 9:16</span>
-        </div>
-        <!-- <iframe src="ССЫЛКА" title="Сниппет Narcos Records" loading="lazy" allowfullscreen frameborder="0"></iframe> -->
-      </div>
+        <figcaption><b>ЕР</b></figcaption>
+      </figure>
 
     </div>
 
