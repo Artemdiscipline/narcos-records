@@ -3,7 +3,12 @@
 Лендинг студии звукозаписи в Тюмени. Одна страница, статика: HTML, CSS, JS.
 Никаких сборщиков и зависимостей — открыл файл и правь.
 
-Живая версия: https://artemdiscipline.github.io/narcos-records/
+Живая версия: https://narcos-records.web.app/
+Зеркало на GitHub Pages: https://artemdiscipline.github.io/narcos-records/
+
+Основной адрес — Firebase, он прописан в canonical, Open Graph
+и микроразметке. Если меняете домен, поправьте эти семь ссылок
+в `index.html` (все в `<head>`).
 
 ```
 index.html   разметка и все тексты
@@ -22,12 +27,21 @@ http://localhost:5178
 
 ## Деплой
 
-Уже настроен GitHub Pages с ветки `main`, папка `/`. После пуша сайт
-пересобирается сам, обычно за минуту.
+**Firebase** — основная площадка. Отдаёт из корня репозитория,
+настройки в `firebase.json`:
+
+```bash
+firebase deploy --only hosting
+```
+
+**GitHub Pages** — зеркало с ветки `main`, папка `/`. Пересобирается
+само после пуша, обычно за минуту:
 
 ```bash
 git add -A && git commit -m "правки" && git push
 ```
+
+Обе площадки отдают одни и те же файлы из корня, второй копии нет.
 
 ## Что осталось подставить
 
