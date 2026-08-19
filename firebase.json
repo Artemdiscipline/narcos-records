@@ -5,6 +5,7 @@
       "**/.*",
       "**/.*/**",
       "**/node_modules/**",
+      "_originals/**",
       "firebase.json",
       ".firebaserc",
       "README.md",
@@ -14,7 +15,10 @@
       {
         "source": "**/*.html",
         "headers": [
-          { "key": "Cache-Control", "value": "no-cache" }
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
         ]
       }
     ]

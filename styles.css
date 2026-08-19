@@ -663,8 +663,9 @@ h3{ font-size:19px; font-weight:700 }
   transition:color .3s ease;
 }
 .track figcaption a.alt:hover{ color:var(--fg-mid) }
-/* Кадров шесть: на телефоне две колонки, дальше три — ряды ровные в обоих. */
+/* Все кадры приведены к 4:5, поэтому обычная сетка с ровными рядами. */
 .gallery{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px }
+.gallery .gi{ margin:0 }
 
 .embed{
   position:relative;
@@ -756,9 +757,13 @@ h3{ font-size:19px; font-weight:700 }
 .member-body p{ color:var(--fg-mid); font-size:14.5px }
 .member-body p:last-child{ margin-bottom:0 }
 
-/* на телефоне портрет 3:4 занимает пол-экрана — режем шире */
-@media (max-width:599px){
-  .member .ph{ aspect-ratio:5/4 }
+/* прозвище рядом с именем */
+.member h3 .alias{
+  display:block;
+  margin-top:6px;
+  font-family:var(--mono); font-weight:400;
+  font-size:11px; letter-spacing:.24em; text-transform:uppercase;
+  -webkit-text-fill-color:var(--fg-dim); color:var(--fg-dim);
 }
 
 
@@ -1001,8 +1006,10 @@ h3{ font-size:19px; font-weight:700 }
   .rev:nth-child(2n){ border-right:1px solid var(--hair) }
   .rev:nth-child(3n){ border-right:0 }
   .cta-grid{ grid-template-columns:repeat(6,1fr) }
-  .member{ display:grid; grid-template-columns:minmax(0,300px) 1fr; align-items:stretch }
-  .member .ph{ height:100%; aspect-ratio:auto; min-height:360px }
+  /* фото держит 4:5 на всех экранах, поэтому не растягиваем его
+     под высоту карточки — иначе у каждого получалось своё соотношение */
+  .member{ display:grid; grid-template-columns:minmax(0,300px) 1fr; align-items:start }
+  .member .ph{ align-self:start }
   .member-body{ padding:44px 40px }
   .ftr-grid{ grid-template-columns:1.6fr 1fr 1fr 1fr; gap:56px }
   .map{ height:480px }

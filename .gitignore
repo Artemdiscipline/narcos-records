@@ -8,3 +8,6 @@
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Исходники фото, в сборку и репозиторий не идут
+_originals/
