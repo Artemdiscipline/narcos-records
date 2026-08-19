@@ -603,6 +603,18 @@ h3{ font-size:19px; font-weight:700 }
 .svc li:last-child{ border-bottom:0 }
 .svc .nm{ color:var(--fg-mid) }
 .svc .pr{ font-weight:600; color:var(--fg); white-space:nowrap; font-size:14px }
+/* пометка акции у строки прайса */
+.svc .tag{
+  font-style:normal;
+  margin-left:9px;
+  padding:2px 8px 3px;
+  border-radius:999px;
+  font-family:var(--mono);
+  font-size:9px; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--violet-2);
+  border:1px solid rgba(177,75,255,.38);
+  white-space:nowrap;
+}
 .svc .pr.req{ font-weight:400; color:var(--fg-dim); font-size:13px }
 .svc-note{
   margin:20px 0 0;
