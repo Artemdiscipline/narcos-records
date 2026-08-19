@@ -1009,7 +1009,9 @@ h3{ font-size:19px; font-weight:700 }
   .svc:nth-child(3n){ border-right:0 }
   /* в неполном последнем ряду линия висела бы в пустоте */
   .svc:last-child{ border-right:0 }
-  .audio-grid{ grid-template-columns:repeat(3,1fr) }
+  /* треков четыре: в две колонки ряды ровные, и плееру Яндекса
+     достаётся вдвое больше ширины — в узкой колонке ему тесно */
+  .audio-grid{ grid-template-columns:repeat(2,1fr) }
   /* первый клип во всю ширину, два других под ним */
   .video-grid{ grid-template-columns:repeat(2,1fr) }
   .clip:first-child{ grid-column:span 2 }
