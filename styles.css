@@ -976,11 +976,11 @@ h3{ font-size:19px; font-weight:700 }
   .svc-grid{ grid-template-columns:repeat(2,1fr) }
   .svc{ border-right:1px solid var(--hair) }
   .svc:nth-child(2n){ border-right:0 }
-  .gallery{ grid-template-columns:repeat(3,1fr); gap:14px }
+  .gallery{ grid-template-columns:repeat(2,1fr); gap:14px }
   .rev-grid{ grid-template-columns:repeat(2,1fr) }
   .rev{ border-right:1px solid var(--hair) }
   .rev:nth-child(2n){ border-right:0 }
-  .cta-grid{ grid-template-columns:repeat(3,1fr) }
+  .cta-grid{ grid-template-columns:repeat(2,1fr) }
   .info{ grid-template-columns:repeat(3,1fr); gap:0 1px; background:var(--hair) }
   .info > div{ background:var(--ink-2); padding:26px 24px }
   .info > div:first-child{ padding-left:0 }
@@ -1015,11 +1015,11 @@ h3{ font-size:19px; font-weight:700 }
   /* первый клип во всю ширину, два других под ним */
   .video-grid{ grid-template-columns:repeat(2,1fr) }
   .clip:first-child{ grid-column:span 2 }
-  .gallery{ grid-template-columns:repeat(3,1fr); gap:16px }
+  .gallery{ grid-template-columns:repeat(4,1fr); gap:16px }
   .rev-grid{ grid-template-columns:repeat(3,1fr) }
   .rev:nth-child(2n){ border-right:1px solid var(--hair) }
   .rev:nth-child(3n){ border-right:0 }
-  .cta-grid{ grid-template-columns:repeat(6,1fr) }
+  .cta-grid{ grid-template-columns:repeat(4,1fr) }
   /* фото держит 4:5 на всех экранах, поэтому не растягиваем его
      под высоту карточки — иначе у каждого получалось своё соотношение */
   .member{ display:grid; grid-template-columns:minmax(0,300px) 1fr; align-items:start }
