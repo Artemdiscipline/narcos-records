@@ -574,8 +574,8 @@ h3{ font-size:19px; font-weight:700 }
 
 /* --- 02 услуги --- */
 
-/* Линии на самих карточках, а не фоном сетки: услуг восемь, в три колонки
-   последний ряд неполный — фон сетки светился бы в пустой ячейке. */
+/* Линии на самих карточках, чтобы при неполном последнем ряде
+   границы не появлялись в пустых ячейках. */
 .svc-grid{ margin-top:56px; display:grid; border-top:1px solid var(--hair) }
 .svc{
   position:relative;
@@ -976,6 +976,7 @@ h3{ font-size:19px; font-weight:700 }
   .svc-grid{ grid-template-columns:repeat(2,1fr) }
   .svc{ border-right:1px solid var(--hair) }
   .svc:nth-child(2n){ border-right:0 }
+  .svc:last-child{ border-right:0 }
   .gallery{ grid-template-columns:repeat(2,1fr); gap:14px }
   .rev-grid{ grid-template-columns:repeat(2,1fr) }
   .rev{ border-right:1px solid var(--hair) }
